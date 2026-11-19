@@ -13,4 +13,11 @@ data/*.csv
 backend/water_data.db
 *.db
 
+# Runtime snapshots & test images
+backend/snapshots/*.jpg
+!backend/snapshots/.gitkeep
+backend/latest_dial.jpg
+Screenshot*.png
+
+
 
