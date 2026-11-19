@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap');
+
+:root {
+  --bg-abyss: #040a17;
+  --bg-ocean: #07152b;
+  --bg-glass: rgba(10, 25, 47, 0.75);
+  --border-aquatic: rgba(0, 180, 216, 0.22);
+  --cyan-glow: #00B4D8;
+  --azure-glow: #0077B6;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-abyss);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(0, 180, 216, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(0, 119, 182, 0.08) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar for Aquatic Vibe */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #040a17;
+}
+::-webkit-scrollbar-thumb {
+  background: #0e2a47;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00B4D8;
+}
+
+/* Aquatic Glass Cards */
+.aquatic-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-aquatic);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.28s ease;
+}
+
+.aquatic-card:hover {
+  border-color: rgba(0, 180, 216, 0.4);
+  box-shadow: 0 14px 40px rgba(0, 180, 216, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Mechanical Water Meter Roller Drums (Spacious & 3D Realism) */
+.hero-drum-frame {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(180deg, #090e17 0%, #03060a 100%);
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 2px solid #1e293b;
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 180, 216, 0.15);
+}
+
+.hero-drum-unit {
+  width: 48px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.35), 0 3px 6px rgba(0, 0, 0, 0.4);
+  user-select: none;
+}
+
+.hero-drum-white {
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+.hero-drum-red {
+  background: linear-gradient(180deg, #ef4444 0%, #b91c1c 100%);
+  color: #ffffff;
+  border: 1px solid #f87171;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.hero-drum-unit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, transparent 100%);
+  border-radius: 8px 8px 0 0;
+}
+
+.hero-drum-unit::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, transparent 100%);
+  border-radius: 0 0 8px 8px;
+}
+
+/* Water Ripple Animation */
+@keyframes waterWaveGlow {
+  0% { transform: scale(0.98); opacity: 0.7; }
+  50% { transform: scale(1.02); opacity: 1; filter: drop-shadow(0 0 12px rgba(0, 180, 216, 0.6)); }
+  100% { transform: scale(0.98); opacity: 0.7; }
+}
+
+.animate-water-glow {
+  animation: waterWaveGlow 3s infinite ease-in-out;
+}
+
+/* AntD Component overrides & tweaks */
+.ant-layout {
+  background: transparent !important;
+}
+
+.ant-layout-sider {
+  background: #050f21 !important;
+  border-right: 1px solid rgba(0, 180, 216, 0.2) !important;
+}
+
+.ant-layout-header {
+  height: auto !important;
+  line-height: normal !important;
+  padding: 0 !important;
+}
+
+.ant-card {
+  background: rgba(10, 25, 47, 0.75) !important;
+  border: 1px solid rgba(0, 180, 216, 0.2) !important;
+  backdrop-filter: blur(14px);
+}
+
+.ant-statistic-title {
+  color: #94a3b8 !important;
+  font-size: 13px !important;
+  margin-bottom: 6px !important;
+}
+
+.ant-statistic-content-value {
+  color: #f1f5f9 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 700 !important;
+}
+
+.ant-badge-status-dot {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+/* ── Responsive Mechanical Roller Drums ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-drum-frame {
+    padding: 8px 12px;
+    gap: 5px;
+    border-radius: 12px;
+  }
+  .hero-drum-unit {
+    width: 38px;
+    height: 54px;
+    font-size: 26px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-drum-frame {
+    padding: 6px 8px;
+    gap: 3px;
+    border-radius: 10px;
+  }
+  .hero-drum-unit {
+    width: 32px;
+    height: 46px;
+    font-size: 21px;
+    border-radius: 5px;
+  }
+  .aquatic-card {
+    border-radius: 12px;
+  }
+  .chat-bubble-user, .chat-bubble-bot {
+    max-width: 94% !important;
+    padding: 10px 14px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-drum-frame {
+    padding: 4px 6px;
+    gap: 2px;
+  }
+  .hero-drum-unit {
+    width: 26px;
+    height: 38px;
+    font-size: 17px;
+  }
+}
+
+/* ── Aquatic AI Assistant Chat Styles ────────────────────────────────────────── */
+.aquatic-chat-box {
+  background: rgba(10, 25, 47, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 180, 216, 0.22);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  width: 100%;
+  height: calc(100vh - 128px);
+  min-height: 560px;
+}
+
+.aquatic-chat-box .ant-card-body {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+
+.aquatic-chat-feed {
+  flex: 1 1 0% !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0 !important;
+  overscroll-behavior: contain !important;
+  scroll-behavior: smooth;
+}
+
+.aquatic-chat-feed::-webkit-scrollbar {
+  width: 6px;
+}
+
+.aquatic-chat-feed::-webkit-scrollbar-track {
+  background: rgba(4, 10, 23, 0.5);
+}
+
+.aquatic-chat-feed::-webkit-scrollbar-thumb {
+  background: rgba(0, 180, 216, 0.35);
+  border-radius: 4px;
+}
+
+.aquatic-chat-feed::-webkit-scrollbar-thumb:hover {
+  background: #00B4D8;
+}
+
+.chat-bubble-user {
+  align-self: flex-end;
+  max-width: 78%;
+  background: linear-gradient(135deg, #0077B6 0%, #0096C7 100%);
+  color: #ffffff;
+  border-radius: 18px 18px 4px 18px;
+  padding: 14px 20px;
+  box-shadow: 0 4px 16px rgba(0, 119, 182, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.chat-bubble-bot {
+  align-self: flex-start;
+  max-width: 82%;
+  background: rgba(6, 18, 38, 0.85);
+  border: 1px solid rgba(0, 180, 216, 0.25);
+  color: #f1f5f9;
+  border-radius: 18px 18px 18px 4px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.chat-suggestion-chip {
+  background: rgba(0, 180, 216, 0.08);
+  border: 1px solid rgba(0, 180, 216, 0.25);
+  color: #38bdf8;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chat-suggestion-chip:hover {
+  background: rgba(0, 180, 216, 0.2);
+  border-color: #00B4D8;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 180, 216, 0.3);
+}
+
+.chat-suggestion-chip:active {
+  transform: translateY(0);
+}
+
+.chat-input-toolbar {
+  background: rgba(4, 12, 26, 0.85);
+  border-top: 1px solid rgba(0, 180, 216, 0.2);
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
